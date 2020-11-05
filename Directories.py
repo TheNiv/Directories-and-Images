@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Oct 26 11:39:36 2020
 
-@author: Niv Lifshitz
-"""
 import os
 import cv2
 import matplotlib.pyplot as plt
@@ -57,7 +52,8 @@ def plot_images(images):
     #plots the images in the list images
     f ,axs = plt.subplots(len(images))
     for i in range(len(images)):
-        axs[i].imshow(images[i])
+        axs[i].imshow(cv2.cvtColor(images[i],cv2.COLOR_BGR2RGB))  #convert the image from BGR to RGB(opencv works with BGR)
+                                                                  # and matplotlib works with RGB.
     plt.tight_layout()
     plt.show()
 
@@ -85,3 +81,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

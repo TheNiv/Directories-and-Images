@@ -18,10 +18,15 @@ def create_dir(path ,dir_name):
     if a directory with this name does not already exists
     """
     new_path = path + '/' + dir_name
+    
+    
+    
     try:
-        os.mkdir(new_path)  #מייצר את התיקיה בעלת השם name
-        os.mkdir(new_path+'/test') #creat the directory test inside name
-        os.mkdir(new_path+'/train')#creat the directory train inside name
+        os.mkdir(new_path) #creates a directory with the name dir_name
+        
+        #create test and train directories inside the created directory
+        os.mkdir(new_path+'/test') 
+        os.mkdir(new_path+'/train')
     except OSError:
         print ("Creation of the directories failed, you already have such directory")
     else:
